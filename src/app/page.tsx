@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   return (
@@ -12,7 +15,7 @@ export default function Home() {
           <a className="navbar-brand" href="#">
             <Image
               className="rounded"
-              src="/icon/Profile Image.png"
+              src="/assets/Profile Image.png"
               alt="Logo"
               width={50}
               height={50}
@@ -21,12 +24,16 @@ export default function Home() {
           <div className="text-white">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item me-4">
-                <a className="nav-link text-white" aria-current="page" href="#home">
+                <a className="nav-link text-white" aria-current="page" href="#">
                   Home
                 </a>
               </li>
               <li className="nav-item me-4">
-                <a className="nav-link text-white" aria-current="page" href="#about">
+                <a
+                  className="nav-link text-white"
+                  aria-current="page"
+                  href="#about"
+                >
                   About
                 </a>
               </li>
@@ -36,7 +43,11 @@ export default function Home() {
                 </a>
               </li>
               <li className="nav-item me-4">
-                <a className="nav-link text-white" aria-current="page" href="#projects">
+                <a
+                  className="nav-link text-white"
+                  aria-current="page"
+                  href="#projects"
+                >
                   Project
                 </a>
               </li>
@@ -53,8 +64,55 @@ export default function Home() {
       {/* Content */}
       <section id="home" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1>Home Section</h1>
-          {/* Content here */}
+          <div className="d-flex justify-content-between">
+            <div
+              className="position-relative"
+              style={{ width: "400px", height: "400px" }}
+            >
+              <Image
+                className="rounded position-absolute"
+                src="/assets/homeImage.png"
+                alt="Home Image"
+                width={250}
+                height={250}
+                style={{
+                  top: "0",
+                  left: "0",
+                  zIndex: 1,
+                  boxShadow: "0 8px 40px rgba(75, 75, 75, 0.4)",
+                }}
+              />
+              <Image
+                className="rounded position-absolute"
+                src="/assets/homeImage2.png"
+                alt="Home Image 2"
+                width={300}
+                height={300}
+                style={{
+                  bottom: "0",
+                  right: "0",
+                  zIndex: 2,
+                  boxShadow: "0 8px 40px rgba(75, 75, 75, 0.4)",
+                }}
+              />
+            </div>
+            <div className="d-flex flex-column justify-content-center align-items-end">
+              <h1 className="fs-1">
+                <TypeAnimation
+                  sequence={[
+                    "Welcome to Overbed Studio",
+                    2000,
+                    "Welcome to Ov3r83&#",
+                    1000,
+                    "Welcome to Overbed Studio",
+                  ]}
+                  wrapper="span"
+                  repeat={Infinity}
+                />
+              </h1>
+              <p className="fs-3">Where Late-Night Ideas Become Tomorrow’s Tech.</p>
+            </div>
+          </div>
         </div>
       </section>
 
