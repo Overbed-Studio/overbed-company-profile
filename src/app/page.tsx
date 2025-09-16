@@ -110,7 +110,9 @@ export default function Home() {
                   repeat={Infinity}
                 />
               </h1>
-              <p className="fs-3">Where Late-Night Ideas Become Tomorrow’s Tech.</p>
+              <p className="fs-3">
+                Where Late-Night Ideas Become Tomorrow’s Tech.
+              </p>
             </div>
           </div>
         </div>
@@ -118,8 +120,53 @@ export default function Home() {
 
       <section id="about" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1>About Section</h1>
-          {/* Content here */}
+          <h1 className="fs-2">
+            <TypeAnimation
+              sequence={["Who are we?", 2000, "Wh0 4%3 we???", 1000]}
+              wrapper="span"
+              repeat={Infinity}
+            />
+          </h1>
+          <div className="d-flex align-items-center justify-content-between">
+            <div className="w-50">
+              <p style={{ textAlign: "justify" }}>
+                Overbed Studio is a software development company dedicated to
+                crafting innovative digital solutions that help businesses
+                thrive in the modern era. We combine creative design, reliable
+                development, and deep client insight to deliver high-quality
+                web, mobile, and integrated systems. With a passionate and
+                skilled team, we believe every line of code should create
+                meaningful value and measurable impact.
+              </p>
+              <div className="row mt-4">
+                <div className="col-6">
+                  <h2 className="fs-4">Our Mission</h2>
+                  <ul style={{ textAlign: "justify" }}>
+                    <li>
+                      Deliver scalable and efficient software development
+                      services.
+                    </li>
+                    <li>
+                      Prioritize user experience and quality in every product.
+                    </li>
+                    <li>
+                      Build long-term partnerships with clients through
+                      transparent collaboration.
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-6">
+                  <h2 className="fs-4">Our Vision</h2>
+                  <ul style={{ textAlign: "justify" }}>
+                    <li>
+                      To be a trusted technology partner that drives digital
+                      transformation through creative and impactful solutions.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
