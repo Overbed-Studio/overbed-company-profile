@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import TextCardComponent from "../components/textCardComponent";
 
 export default function Home() {
   return (
@@ -127,8 +128,8 @@ export default function Home() {
               repeat={Infinity}
             />
           </h1>
-          <div className="d-flex align-items-center justify-content-between">
-            <div className="w-50">
+          <div className="row">
+            <div className="col-12">
               <p style={{ textAlign: "justify" }}>
                 Overbed Studio is a software development company dedicated to
                 crafting innovative digital solutions that help businesses
@@ -165,6 +166,52 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <h1 className="fs-2 mt-4">
+            <TypeAnimation
+              sequence={["Why choose us?", 2000, "Wh# ch005# ##???", 500]}
+              wrapper="span"
+              repeat={Infinity}
+            />
+          </h1>
+          <div className="row">
+            <div className="col-6">
+              <TextCardComponent
+                number={1}
+                text="Tailored Solutions: We don’t believe in one-size-fits-all. Every product is customized to match your vision and goals."
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-6"></div>
+            <div className="col-6">
+              <TextCardComponent
+                number={2}
+                text="Creative + Technical Expertise: Our team blends design creativity with solid engineering to produce user-friendly and scalable products."
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-6">
+              <TextCardComponent
+                number={3}
+                text="Long-Term Partnership: We’re not just building software; we’re building relationships. Your success is our success."
+              />
+            </div>
+            <div className="col-6"></div>
+          </div>
+
+          <div className="row">
+            <div className="col-6"></div>
+            <div className="col-6">
+              <TextCardComponent
+                number={4}
+                text="Innovation-Driven: We stay ahead of trends and technologies to keep your product future-ready."
+              />
             </div>
           </div>
         </div>
