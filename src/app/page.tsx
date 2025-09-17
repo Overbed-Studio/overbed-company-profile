@@ -233,6 +233,14 @@ export default function Home() {
               repeat={Infinity}
             />
           </h1>
+          <div className="my-4 text-white d-flex flex-column align-items-center">
+            <p className="fs-2 fw-bold">Trusted by Leading Brands</p>
+            <p>
+              We are proud to work with a diverse range of clients, from startups
+              to established enterprises, helping them achieve their digital
+              goals.
+            </p>
+          </div>
           <Marquee gradient={false} speed={50} pauseOnHover={true}>
             <div className="d-flex align-items-center">
               {clients.map((client, index) => (
@@ -256,7 +264,7 @@ export default function Home() {
 
       <section id="projects" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1>Projects Section</h1>
+          <h1 className="fs-2"><TypeAnimation sequence={["Our Projects", 2000, "Our Pr0j3cts", 500]} wrapper="span" repeat={Infinity} /></h1>
           {/* Content here */}
         </div>
       </section>
