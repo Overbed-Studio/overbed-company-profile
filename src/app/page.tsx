@@ -3,6 +3,13 @@
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import TextCardComponent from "../components/textCardComponent";
+import Marquee from "react-fast-marquee";
+
+const clients = [
+  { name: "Sekawan Media", logo: "/assets/sekawan.png" },
+  { name: "Intellix", logo: "/assets/intellix.png"},
+  { name: "youtube", logo: "/assets/youtube.png" },
+];
 
 export default function Home() {
   return (
@@ -219,8 +226,31 @@ export default function Home() {
 
       <section id="clients" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1>Our Clients Section</h1>
-          {/* Content here */}
+          <h1 className="fs-2">
+            <TypeAnimation
+              sequence={["Our Clients", 2000, "Our Cl13$#@.", 500]}
+              wrapper="span"
+              repeat={Infinity}
+            />
+          </h1>
+          <Marquee gradient={false} speed={50} pauseOnHover={true}>
+            <div className="d-flex align-items-center">
+              {clients.map((client, index) => (
+                <div key={index} className="mx-4 me-4 ms-4">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={150}
+                    height={75}
+                    style={{
+                      width: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </Marquee>
         </div>
       </section>
 
