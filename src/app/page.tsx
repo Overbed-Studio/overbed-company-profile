@@ -237,15 +237,17 @@ export default function Home() {
           <div className="row justify-content-center">
             <div className="col-md-12">
               <form
-                onSubmit={(e) => {
+                onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                   e.preventDefault();
-                  const name = e.target.name.value;
-                  const email = e.target.email.value;
-                  const message = e.target.message.value;
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get("name")?.toString() || "";
+                  const email = formData.get("email")?.toString() || "";
+                  const message = formData.get("message")?.toString() || "";
 
                   const subject = encodeURIComponent(`Contact from ${name}`);
                   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;window.location.href = mailtoLink;
+                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;
+                  window.location.href = mailtoLink;
                 }}
               >
                 <div className="mb-3">
@@ -284,7 +286,7 @@ export default function Home() {
                     className="form-control"
                     id="message"
                     name="message"
-                    rows="5"
+                    rows={5}
                     placeholder="Write your message..."
                     required
                   ></textarea>
