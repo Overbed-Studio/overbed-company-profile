@@ -4,10 +4,11 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import TextCardComponent from "../components/textCardComponent";
 import Marquee from "react-fast-marquee";
+import ProjectCardComponent from "@/components/ProjectCardComponent";
 
 const clients = [
   { name: "Sekawan Media", logo: "/assets/sekawan.png" },
-  { name: "Intellix", logo: "/assets/intellix.png"},
+  { name: "Intellix", logo: "/assets/intellix.png" },
   { name: "youtube", logo: "/assets/youtube.png" },
 ];
 
@@ -236,9 +237,9 @@ export default function Home() {
           <div className="my-4 text-white d-flex flex-column align-items-center">
             <p className="fs-2 fw-bold">Trusted by Leading Brands</p>
             <p>
-              We are proud to work with a diverse range of clients, from startups
-              to established enterprises, helping them achieve their digital
-              goals.
+              We are proud to work with a diverse range of clients, from
+              startups to established enterprises, helping them achieve their
+              digital goals.
             </p>
           </div>
           <Marquee gradient={false} speed={50} pauseOnHover={true}>
@@ -264,8 +265,50 @@ export default function Home() {
 
       <section id="projects" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1 className="fs-2"><TypeAnimation sequence={["Our Projects", 2000, "Our Pr0j3cts", 500]} wrapper="span" repeat={Infinity} /></h1>
-          {/* Content here */}
+          <h1 className="fs-2">
+            <TypeAnimation
+              sequence={["Our Projects", 2000, "Our Pr0j3ct$", 500]}
+              wrapper="span"
+              repeat={Infinity}
+            />
+          </h1>
+          <div className="row">
+            <div className="col-12 text-center">
+              <p className="fs-4 fw-bold">
+                Overbed Studio has successfully delivered a variety of projects
+                across different industries. <br /> Here are some highlights:
+              </p>
+            </div>
+            <div className="col-4">
+              <ProjectCardComponent
+                src="/assets/project1.png"
+                alt="Project 1"
+                title="E-Commerce Platform"
+                description="Developed a scalable e-commerce platform with integrated payment gateways and user-friendly design."
+                link="/projects/project1"
+              />
+            </div>
+
+            <div className="col-4">
+              <ProjectCardComponent
+                src="/assets/project1.png"
+                alt="Project 1"
+                title="E-Commerce Platform"
+                description="Developed a scalable e-commerce platform with integrated payment gateways and user-friendly design."
+                link="/projects/project1"
+              />
+            </div>
+
+            <div className="col-4">
+              <ProjectCardComponent
+                src="/assets/project1.png"
+                alt="Project 1"
+                title="E-Commerce Platform"
+                description="Developed a scalable e-commerce platform with integrated payment gateways and user-friendly design."
+                link="/projects/project1"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -282,8 +325,11 @@ export default function Home() {
                   const message = e.target.message.value;
 
                   const subject = encodeURIComponent(`Contact from ${name}`);
-                  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;window.location.href = mailtoLink;
+                  const body = encodeURIComponent(
+                    `Name: ${name}\nEmail: ${email}\n\n${message}`
+                  );
+                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;
+                  window.location.href = mailtoLink;
                 }}
               >
                 <div className="mb-3">
