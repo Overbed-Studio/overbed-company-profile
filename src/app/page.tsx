@@ -234,7 +234,68 @@ export default function Home() {
       <section id="contact" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
           <h1>Contact Section</h1>
-          {/* Content here */}
+          <div className="row justify-content-center">
+            <div className="col-md-12">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const name = e.target.name.value;
+                  const email = e.target.email.value;
+                  const message = e.target.message.value;
+
+                  const subject = encodeURIComponent(`Contact from ${name}`);
+                  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;window.location.href = mailtoLink;
+                }}
+              >
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="message" className="form-label">
+                    Your Message
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your message..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" className="btn btn-primary w-100">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </div>
