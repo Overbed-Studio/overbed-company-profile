@@ -382,6 +382,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="text-white text-center py-3" style={{ backgroundColor: "#2b2830ff" }}>
+        <p className="mb-0">
+          &copy; {new Date().getFullYear()} Overbed Studio. All rights
+          reserved.
+        </p>
+      </footer>
     </div>
   );
 }
