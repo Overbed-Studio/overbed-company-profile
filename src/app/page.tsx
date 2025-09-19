@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import TextCardComponent from "../components/textCardComponent";
+import Marquee from "react-fast-marquee";
+import ProjectCardComponent from "@/components/ProjectCardComponent";
+
+const clients = [
+  { name: "Sekawan Media", logo: "/assets/sekawan.png" },
+  { name: "Intellix", logo: "/assets/intellix.png" },
+  { name: "youtube", logo: "/assets/youtube.png" },
+];
 
 export default function Home() {
   return (
@@ -219,15 +227,88 @@ export default function Home() {
 
       <section id="clients" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1>Our Clients Section</h1>
-          {/* Content here */}
+          <h1 className="fs-2">
+            <TypeAnimation
+              sequence={["Our Clients", 2000, "Our Cl13$#@.", 500]}
+              wrapper="span"
+              repeat={Infinity}
+            />
+          </h1>
+          <div className="my-4 text-white d-flex flex-column align-items-center">
+            <p className="fs-2 fw-bold">Trusted by Leading Brands</p>
+            <p>
+              We are proud to work with a diverse range of clients, from
+              startups to established enterprises, helping them achieve their
+              digital goals.
+            </p>
+          </div>
+          <Marquee gradient={false} speed={50} pauseOnHover={true}>
+            <div className="d-flex align-items-center">
+              {clients.map((client, index) => (
+                <div key={index} className="mx-4 me-4 ms-4">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={150}
+                    height={75}
+                    style={{
+                      width: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </Marquee>
         </div>
       </section>
 
       <section id="projects" style={{ height: "100vh", padding: "80px 0" }}>
         <div className="container text-white">
-          <h1>Projects Section</h1>
-          {/* Content here */}
+          <h1 className="fs-2">
+            <TypeAnimation
+              sequence={["Our Projects", 2000, "Our Pr0j3ct$", 500]}
+              wrapper="span"
+              repeat={Infinity}
+            />
+          </h1>
+          <div className="row">
+            <div className="col-12 text-center">
+              <p className="fs-4 fw-bold">
+                Overbed Studio has successfully delivered a variety of projects
+                across different industries. <br /> Here are some highlights:
+              </p>
+            </div>
+            <div className="col-4">
+              <ProjectCardComponent
+                src="/assets/project1.png"
+                alt="Project 1"
+                title="E-Commerce Platform"
+                description="Developed a scalable e-commerce platform with integrated payment gateways and user-friendly design."
+                link="/projects/project1"
+              />
+            </div>
+
+            <div className="col-4">
+              <ProjectCardComponent
+                src="/assets/project1.png"
+                alt="Project 1"
+                title="E-Commerce Platform"
+                description="Developed a scalable e-commerce platform with integrated payment gateways and user-friendly design."
+                link="/projects/project1"
+              />
+            </div>
+
+            <div className="col-4">
+              <ProjectCardComponent
+                src="/assets/project1.png"
+                alt="Project 1"
+                title="E-Commerce Platform"
+                description="Developed a scalable e-commerce platform with integrated payment gateways and user-friendly design."
+                link="/projects/project1"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -246,8 +327,7 @@ export default function Home() {
 
                   const subject = encodeURIComponent(`Contact from ${name}`);
                   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;
-                  window.location.href = mailtoLink;
+                  const mailtoLink = `mailto:overbedstudio@gmail.com?subject=${subject}&body=${body}`;window.location.href = mailtoLink;
                 }}
               >
                 <div className="mb-3">
@@ -300,6 +380,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="text-white text-center py-3" style={{ backgroundColor: "#2b2830ff" }}>
+        <p className="mb-0">
+          &copy; {new Date().getFullYear()} Overbed Studio. All rights
+          reserved.
+        </p>
+      </footer>
     </div>
   );
 }
