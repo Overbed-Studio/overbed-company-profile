@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   title: "Overbed Studio",
   description: "Transform your digital vision into reality with Overbed Studio. Expert software development, innovative solutions, and partnership-driven approach for businesses ready to embrace tomorrow's technology.",
   icons: {
-    icon: '/assets/Profile Image.png',
-    apple: '/assets/Profile Image.png',
-    shortcut: '/assets/Profile Image.png',
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+    shortcut: '/favicon.ico',
   }
 };
 
