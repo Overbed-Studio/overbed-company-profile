@@ -7,16 +7,12 @@ export default function TextCardComponent({
 }) {
   return (
     <div
-      className="card text-white"
-      style={{
-        backgroundColor: "#2b2830ff",
-        boxShadow: "0 2px 15px rgba(90, 90, 90, 0.1)",
-      }}
+      className="card-enhanced p-4 text-white h-100"
     >
-      <div className="card-body d-flex align-items-center">
+      <div className="d-flex align-items-center h-100">
         <div className="">
           <div
-            className="badge text-white p-3 me-2 mb-1"
+            className="badge text-white p-3 me-3 mb-1"
             style={{
               backgroundColor: "#3a3a3aff",
               fontSize: "1.1rem",
@@ -25,7 +21,7 @@ export default function TextCardComponent({
             {number}
           </div>
         </div>
-        <p className="p-0 m-0">{text}</p>
+        <p className="fs-7 p-0 m-0">{text}</p>
       </div>
     </div>
   );
