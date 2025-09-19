@@ -142,7 +142,7 @@ export default function Home() {
                     />
                   </h1>
                   <p className="fs-3 mb-4 text-light opacity-90">
-                    Where Late-Night Ideas Become Tomorrow's Tech.
+                    Where Late-Night Ideas Become Tomorrows Tech.
                   </p>
                   
                   {/* Stats */}
@@ -386,7 +386,7 @@ export default function Home() {
               <h1 className="display-4 fw-bold mb-3">
                 <span className="typewriter-text">Get In Touch</span>
               </h1>
-              <p className="fs-5 text-muted">Ready to start your next project? Let's discuss your ideas!</p>
+              <p className="fs-5 text-muted">Ready to start your next project? Lets discuss your ideas!</p>
             </div>
             
             <div className="row justify-content-center">
